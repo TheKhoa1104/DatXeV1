@@ -1,0 +1,96 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="default" extends="struts-default">
+		<!-- LE NHAT TUNG -->
+		<!-- Dang nhap -->
+		<action name="dangNhap" class="eCore.controller.Controller_XacThuc"
+			method="dangNhap">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/login.jsp</result>
+		</action>
+		<action name="dangXuat" class="eCore.controller.Controller_XacThuc"
+			method="dangXuat">
+			<result name="SUCCESS">/login.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+		<!-- Dang nhap -->
+		
+		<!-- Đổi mật khẩu -->
+		<action name="doiMatKhauTaiKhoanTaiXe" class="eCore.controller.Controller_TaiKhoanTaiXe"
+			method="doiMatKhau">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+		<!-- Đổi mật khẩu -->
+		
+		<!-- Xem chi tiet -->
+		<action name="xemChiTietTaiXe" class="eCore.controller.Controller_TaiXe"
+			method="viewDetail">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+		
+		<!-- Xem chi tiet va chinh sua -->
+		<action name="xemChiTietVaChinhSuaTaiXe" class="eCore.controller.Controller_TaiXe"
+			method="viewDetailAndEdit">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+		
+		<!-- Lưu Tài Xế -->
+		<action name="luuDuLieuTaiXe" class="eCore.controller.Controller_TaiXe"
+			method="saveOrUpdate">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+		
+		
+		<!-- Xem chi tiet quản trị-->
+		<action name="xemChiTietQuanTri" class="eCore.controller.Controller_QuanTri"
+			method="viewDetail">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+		
+		<!-- Xem chi tiet va chinh sua quản trị-->
+		<action name="xemChiTietVaChinhSuaQuanTri" class="eCore.controller.Controller_QuanTri"
+			method="viewDetailAndEdit">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+		
+		<!-- Lưu Quản Trị -->
+		<action name="luuDuLieuQuanTri" class="eCore.controller.Controller_QuanTri"
+			method="saveOrUpdate">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+		
+		
+		
+		<!-- Xem chi tiet hành khách -->
+		<action name="xemChiTietHanhKhach" class="eCore.controller.Controller_HanhKhach"
+			method="viewDetail">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+		
+		<!-- Xem chi tiet va chinh sua hành khách-->
+		<action name="xemChiTietVaChinhSuaHanhKhach" class="eCore.controller.Controller_HanhKhach"
+			method="viewDetailAndEdit">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+		
+		<!-- Lưu Hành Khách -->
+		<action name="luuDuLieuHanhKhach" class="eCore.controller.Controller_HanhKhach"
+			method="saveOrUpdate">
+			<result name="SUCCESS">/index.jsp</result>
+			<result name="FAIL">/index.jsp</result>
+		</action>
+		
+	</package>
+</struts>
