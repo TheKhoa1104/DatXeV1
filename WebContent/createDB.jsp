@@ -38,6 +38,119 @@
 		CN_QuanLyThongTinCoBan.setTenHienThi("Thông tin cơ bản");
 		CN_QuanLyThongTinCoBan.setChucNangCha(null);
 		daochucnang.saveOrUpdate(CN_QuanLyThongTinCoBan);
+		
+		ChucNang CN_QuanLyThongTinTaiXe = new ChucNang();
+		CN_QuanLyThongTinTaiXe.setMaChucNang("CN_QuanLyThongTinTaiXe");
+		CN_QuanLyThongTinTaiXe.setDuongDan("pages/taixes.jsp");
+		CN_QuanLyThongTinTaiXe.setHinhAnh("fa fa-list-ol");
+		CN_QuanLyThongTinTaiXe.setTenHienThi("Quản lý thông tin tài xế");
+		CN_QuanLyThongTinTaiXe.setChucNangCha(CN_QuanLyThongTinCoBan);
+		daochucnang.saveOrUpdate(CN_QuanLyThongTinTaiXe);
+		
+		ChucNang CN_KeKhaiThongTinTaiXe = new ChucNang();
+		CN_KeKhaiThongTinTaiXe.setMaChucNang("CN_KeKhaiThongTinTaiXe");
+		CN_KeKhaiThongTinTaiXe.setDuongDan("pages/taixe.jsp");
+		CN_KeKhaiThongTinTaiXe.setHinhAnh("fa fa-paperclip");
+		CN_KeKhaiThongTinTaiXe.setTenHienThi("Kê khai thông tin tài xế");
+		CN_KeKhaiThongTinTaiXe.setChucNangCha(CN_QuanLyThongTinCoBan);
+		daochucnang.saveOrUpdate(CN_KeKhaiThongTinTaiXe);
+		
+		
+		ChucNang CN_QuanLyThongTinQuanTri = new ChucNang();
+		CN_QuanLyThongTinQuanTri.setMaChucNang("CN_QuanLyThongTinQuanTri");
+		CN_QuanLyThongTinQuanTri.setDuongDan("pages/quantris.jsp");
+		CN_QuanLyThongTinQuanTri.setHinhAnh("fa fa-list-ol");
+		CN_QuanLyThongTinQuanTri.setTenHienThi("Quản lý thông tin quản trị");
+		CN_QuanLyThongTinQuanTri.setChucNangCha(CN_QuanLyThongTinCoBan);
+		daochucnang.saveOrUpdate(CN_QuanLyThongTinQuanTri);
+		
+		
+		ChucNang CN_KeKhaiThongTinQuanTri = new ChucNang();
+		CN_KeKhaiThongTinQuanTri.setMaChucNang("CN_KeKhaiThongTinQuanTri");
+		CN_KeKhaiThongTinQuanTri.setDuongDan("pages/quantri.jsp");
+		CN_KeKhaiThongTinQuanTri.setHinhAnh("fa fa-paperclip");
+		CN_KeKhaiThongTinQuanTri.setTenHienThi("Kê khai thông tin quản trị");
+		CN_KeKhaiThongTinQuanTri.setChucNangCha(CN_QuanLyThongTinCoBan);
+		daochucnang.saveOrUpdate(CN_KeKhaiThongTinQuanTri);
+		
+		
+		ChucNang CN_QuanLyThongTinHanhKhach = new ChucNang();
+		CN_QuanLyThongTinHanhKhach.setMaChucNang("CN_QuanLyThongTinHanhKhach");
+		CN_QuanLyThongTinHanhKhach.setDuongDan("pages/hanhkhachs.jsp");
+		CN_QuanLyThongTinHanhKhach.setHinhAnh("fa fa-list-ol");
+		CN_QuanLyThongTinHanhKhach.setTenHienThi("Quản lý thông tin hành khách");
+		CN_QuanLyThongTinHanhKhach.setChucNangCha(CN_QuanLyThongTinCoBan);
+		daochucnang.saveOrUpdate(CN_QuanLyThongTinHanhKhach);
+		
+		
+		ChucNang CN_KeKhaiThongTinHanhKhach = new ChucNang();
+		CN_KeKhaiThongTinHanhKhach.setMaChucNang("CN_KeKhaiThongTinHanhKhach");
+		CN_KeKhaiThongTinHanhKhach.setDuongDan("pages/hanhkhach.jsp");
+		CN_KeKhaiThongTinHanhKhach.setHinhAnh("fa fa-paperclip");
+		CN_KeKhaiThongTinHanhKhach.setTenHienThi("Kê khai thông tin Hành khách");
+		CN_KeKhaiThongTinHanhKhach.setChucNangCha(CN_QuanLyThongTinCoBan);
+		daochucnang.saveOrUpdate(CN_KeKhaiThongTinHanhKhach);
+		
+		
+		
+		
+		
+		
+		
+		//quản lý chức năng và tài khoản
+		
+		ChucNang CN_QuanLyChucNangVaTaiKhoan = new ChucNang();
+		CN_QuanLyChucNangVaTaiKhoan.setMaChucNang("eCore_QuanLyChucNangVaTaiKhoan");
+		CN_QuanLyChucNangVaTaiKhoan.setDuongDan("null");
+		CN_QuanLyChucNangVaTaiKhoan.setHinhAnh("fa fa-filter");
+		CN_QuanLyChucNangVaTaiKhoan.setTenHienThi("Chức năng và tài khoản");
+		CN_QuanLyChucNangVaTaiKhoan.setChucNangCha(null);
+		daochucnang.saveOrUpdate(CN_QuanLyChucNangVaTaiKhoan);
+		
+		ChucNang CN_QuanLyTaiKhoanTaiXe = new ChucNang();
+		CN_QuanLyTaiKhoanTaiXe.setMaChucNang("eCore_CN_QuanLyTaiKhoanTaiXe");
+		CN_QuanLyTaiKhoanTaiXe.setDuongDan("eCore/pages/taikhoansinhviens.jsp");
+		CN_QuanLyTaiKhoanTaiXe.setHinhAnh("fa fa-users");
+		CN_QuanLyTaiKhoanTaiXe.setTenHienThi("Quản lý tài khoản tài xế");
+		CN_QuanLyTaiKhoanTaiXe.setChucNangCha(CN_QuanLyChucNangVaTaiKhoan);
+		daochucnang.saveOrUpdate(CN_QuanLyTaiKhoanTaiXe);
+		
+		
+		ChucNang CN_QuanLyTaiKhoanQuanTri = new ChucNang();
+		CN_QuanLyTaiKhoanQuanTri.setMaChucNang("eCore_CN_QuanLyTaiKhoanQuanTri");
+		CN_QuanLyTaiKhoanQuanTri.setDuongDan("eCore/pages/taikhoanquantris.jsp");
+		CN_QuanLyTaiKhoanQuanTri.setHinhAnh("fa fa-users");
+		CN_QuanLyTaiKhoanQuanTri.setTenHienThi("Quản lý tài khoản quản trị");
+		CN_QuanLyTaiKhoanQuanTri.setChucNangCha(CN_QuanLyChucNangVaTaiKhoan);
+		daochucnang.saveOrUpdate(CN_QuanLyTaiKhoanQuanTri);
+		
+		ChucNang CN_QuanLyTaiKhoanHanhKhach = new ChucNang();
+		CN_QuanLyTaiKhoanHanhKhach.setMaChucNang("eCore_CN_QuanLyTaiKhoanQuanTri");
+		CN_QuanLyTaiKhoanHanhKhach.setDuongDan("eCore/pages/taikhoanquantris.jsp");
+		CN_QuanLyTaiKhoanHanhKhach.setHinhAnh("fa fa-users");
+		CN_QuanLyTaiKhoanHanhKhach.setTenHienThi("Quản lý tài khoản hành khách");
+		CN_QuanLyTaiKhoanHanhKhach.setChucNangCha(CN_QuanLyChucNangVaTaiKhoan);
+		daochucnang.saveOrUpdate(CN_QuanLyTaiKhoanHanhKhach);
+		
+		
+		
+		
+		
+		ChucNang CN_QuanLyChucNang = new ChucNang();
+		CN_QuanLyChucNang.setMaChucNang("eCore_CN_QuanLyChucNang");
+		CN_QuanLyChucNang.setDuongDan("eCore/pages/chucnangs.jsp");
+		CN_QuanLyChucNang.setHinhAnh("fa fa-share-alt");
+		CN_QuanLyChucNang.setTenHienThi("Quản lý chức năng");
+		CN_QuanLyChucNang.setChucNangCha(CN_QuanLyChucNangVaTaiKhoan);
+		daochucnang.saveOrUpdate(CN_QuanLyChucNang);
+		
+		ChucNang CN_QuanLyPhanQuyen = new ChucNang();
+		CN_QuanLyPhanQuyen.setMaChucNang("kTXCore_1_3_CN_QuanLyPhanQuyen");
+		CN_QuanLyPhanQuyen.setDuongDan("kTXCore/pages/nhomphanquyens.jsp");
+		CN_QuanLyPhanQuyen.setHinhAnh("fa fa-shield");
+		CN_QuanLyPhanQuyen.setTenHienThi("Quản lý phân quyền");
+		CN_QuanLyPhanQuyen.setChucNangCha(CN_QuanLyChucNangVaTaiKhoan);
+		daochucnang.saveOrUpdate(CN_QuanLyPhanQuyen);
 
 		//Phan Quyen Cua Tai Xe
 
@@ -48,21 +161,9 @@
 		ObjectDAO dao2 = new DAO_TaiXe();
 		dao2.saveOrUpdate(tx);
 
-		ChucNang CN_QuanLyThongTinTaiXe = new ChucNang();
-		CN_QuanLyThongTinTaiXe.setMaChucNang("CN_QuanLyThongTinTaiXe");
-		CN_QuanLyThongTinTaiXe.setDuongDan("pages/taixes.jsp");
-		CN_QuanLyThongTinTaiXe.setHinhAnh("fa fa-list-ol");
-		CN_QuanLyThongTinTaiXe.setTenHienThi("Quản lý thông tin tài xế");
-		CN_QuanLyThongTinTaiXe.setChucNangCha(CN_QuanLyThongTinCoBan);
-		daochucnang.saveOrUpdate(CN_QuanLyThongTinTaiXe);
+		
 
-		ChucNang CN_KeKhaiThongTinTaiXe = new ChucNang();
-		CN_KeKhaiThongTinTaiXe.setMaChucNang("CN_KeKhaiThongTinTaiXe");
-		CN_KeKhaiThongTinTaiXe.setDuongDan("pages/taixe.jsp");
-		CN_KeKhaiThongTinTaiXe.setHinhAnh("fa fa-paperclip");
-		CN_KeKhaiThongTinTaiXe.setTenHienThi("Kê khai thông tin tài xế");
-		CN_KeKhaiThongTinTaiXe.setChucNangCha(CN_QuanLyThongTinCoBan);
-		daochucnang.saveOrUpdate(CN_KeKhaiThongTinTaiXe);
+		
 
 		NhomPhanQuyen nhomPhanQuyen1 = new NhomPhanQuyen();
 		nhomPhanQuyen1.setMaNhomPhanQuyen("taixe");
@@ -85,29 +186,25 @@
 		dao3.saveOrUpdate(tk);
 
 		//tai khoan quan tri
-		ChucNang CN_QuanLyThongTinQuanTri = new ChucNang();
-		CN_QuanLyThongTinQuanTri.setMaChucNang("CN_QuanLyThongTinQuanTri");
-		CN_QuanLyThongTinQuanTri.setDuongDan("pages/quantris.jsp");
-		CN_QuanLyThongTinQuanTri.setHinhAnh("fa fa-list-ol");
-		CN_QuanLyThongTinQuanTri.setTenHienThi("Quản lý thông tin quản trị");
-		CN_QuanLyThongTinQuanTri.setChucNangCha(CN_QuanLyThongTinCoBan);
-		daochucnang.saveOrUpdate(CN_QuanLyThongTinQuanTri);
+		
 
-		ChucNang CN_KeKhaiThongTinQuanTri = new ChucNang();
-		CN_KeKhaiThongTinQuanTri.setMaChucNang("CN_KeKhaiThongTinQuanTri");
-		CN_KeKhaiThongTinQuanTri.setDuongDan("pages/quantri.jsp");
-		CN_KeKhaiThongTinQuanTri.setHinhAnh("fa fa-paperclip");
-		CN_KeKhaiThongTinQuanTri.setTenHienThi("Kê khai thông tin quản trị");
-		CN_KeKhaiThongTinQuanTri.setChucNangCha(CN_QuanLyThongTinCoBan);
-		daochucnang.saveOrUpdate(CN_KeKhaiThongTinQuanTri);
+		
 
 		NhomPhanQuyen nhomPhanQuyen2 = new NhomPhanQuyen();
 		nhomPhanQuyen2.setMaNhomPhanQuyen("quantri");
 		nhomPhanQuyen2.setTenNhomPhanQuyen("Quản Trị");
 		Set<ChucNang> cn2 = new HashSet<ChucNang>();
 		cn2.add(CN_QuanLyThongTinCoBan);
+		cn2.add(CN_QuanLyChucNangVaTaiKhoan);
 		cn2.add(CN_QuanLyThongTinQuanTri);
 		cn2.add(CN_KeKhaiThongTinQuanTri);
+		cn2.add(CN_QuanLyTaiKhoanQuanTri);
+		cn2.add(CN_QuanLyThongTinTaiXe);
+		cn2.add(CN_QuanLyThongTinHanhKhach);
+		cn2.add(CN_QuanLyChucNang);
+		cn2.add(CN_QuanLyPhanQuyen);
+		
+		cn2.add(CN_QuanLyChucNang);
 		nhomPhanQuyen2.setChucNangs(cn2);
 		ObjectDAO daoqt = new DAO_NhomPhanQuyen();
 		daoqt.saveOrUpdate(nhomPhanQuyen2);
@@ -136,21 +233,9 @@
 		ObjectDAO dao6 = new DAO_HanhKhach();
 		dao2.saveOrUpdate(hk);
 		
-		ChucNang CN_QuanLyThongTinHanhKhach = new ChucNang();
-		CN_QuanLyThongTinHanhKhach.setMaChucNang("CN_QuanLyThongTinHanhKhach");
-		CN_QuanLyThongTinHanhKhach.setDuongDan("pages/hanhkhachs.jsp");
-		CN_QuanLyThongTinHanhKhach.setHinhAnh("fa fa-list-ol");
-		CN_QuanLyThongTinHanhKhach.setTenHienThi("Quản lý thông tin hành khách");
-		CN_QuanLyThongTinHanhKhach.setChucNangCha(CN_QuanLyThongTinCoBan);
-		daochucnang.saveOrUpdate(CN_QuanLyThongTinHanhKhach);
 		
-		ChucNang CN_KeKhaiThongTinHanhKhach = new ChucNang();
-		CN_KeKhaiThongTinHanhKhach.setMaChucNang("CN_KeKhaiThongTinHanhKhach");
-		CN_KeKhaiThongTinHanhKhach.setDuongDan("pages/hanhkhach.jsp");
-		CN_KeKhaiThongTinHanhKhach.setHinhAnh("fa fa-paperclip");
-		CN_KeKhaiThongTinHanhKhach.setTenHienThi("Kê khai thông tin Hành khách");
-		CN_KeKhaiThongTinHanhKhach.setChucNangCha(CN_QuanLyThongTinCoBan);
-		daochucnang.saveOrUpdate(CN_KeKhaiThongTinHanhKhach);
+		
+		
 		
 		NhomPhanQuyen nhomPhanQuyen3 = new NhomPhanQuyen();
 		nhomPhanQuyen3.setMaNhomPhanQuyen("hanhkhach");

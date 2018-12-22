@@ -5,13 +5,12 @@
 <%
 String tenlop = "HanhKhach";
 String tenTrang = "Quản Lý Hành Khách";
-String trangDanhSach = "index.jsp?p=pages/hanhkhachs.jsp";
+String trangDanhSach = "index.jsp?p=eCore/pages/hanhkhachs.jsp";
 String[] tk_value = {"maHanhKhach", "hoTen", "ngaySinh", "gioiTinh", "noiSinh", "queQuan", "danToc", "tonGiao", "diaChi", "cMND", "email","soDienThoaiDiDong" };
 String[] tk_show = {"Mã Hành Khách", "Họ Tên", "Ngày Sinh", "Giới Tính", "Nới Sinh", "Quê Quán", "Dân Tộc", "Tôn Giáo", "Địa Chỉ", "Số CMND","Email","Số Điện Thoại Di động"};
 	
 %>
 <%@ include file="../../datxePartial/code-header.jsp"%>
-
 <%
 	ObjectDAO<HanhKhach> dao = new DAO_HanhKhach();
 
@@ -53,7 +52,6 @@ String[] tk_show = {"Mã Hành Khách", "Họ Tên", "Ngày Sinh", "Giới 
 					<tr>
 						<th>Mã hành khách</th>
 						<th>Họ tên</th>
-<!-- 						<th>Hình ảnh</th> -->
 						<th>Ngày sinh</th>
 						<th>Giới tính</th>
 						<th>Nơi sinh</th>
@@ -64,8 +62,7 @@ String[] tk_show = {"Mã Hành Khách", "Họ Tên", "Ngày Sinh", "Giới 
 						<th>CMND</th>
 						<th>Email</th>
 						<th>Số diện thoại di động</th>
-<!-- 						<th>Số tài khoản</th> -->
-<!-- 						<th>Ghi chú</th> -->
+						
 						
 
 					</tr>
@@ -78,10 +75,9 @@ String[] tk_show = {"Mã Hành Khách", "Họ Tên", "Ngày Sinh", "Giới 
 							String tenDoiTuong = obj.getHoTen();
 					%>
 					<tr class="odd gradeX">
-<%-- 						<td><%=obj.getNamHoc() == null ? "" : obj.getNamHoc().getTenNamHoc()%></td> --%>
+
 						<td><%=obj.getMaHanhKhach()%></td>
 						<td><%=obj.getHoTen()!=null?obj.getHoTen():""%></td>
-<%-- 						<td><%=obj.getHinhAnh()!=null?obj.getHinhAnh():""%></td> --%>
 						<td><%=obj.getNgaySinh()!=null?obj.getNgaySinh():""%></td>
 						<td><%=obj.getGioiTinh()!=null?obj.getGioiTinh():""%></td>
 						<td><%=obj.getNoiSinh()!=null?obj.getNoiSinh():""%></td>
@@ -92,11 +88,6 @@ String[] tk_show = {"Mã Hành Khách", "Họ Tên", "Ngày Sinh", "Giới 
 						<td><%=obj.getcMND()!=null?obj.getcMND():""%></td>
 						<td><%=obj.getEmail()!=null?obj.getEmail():""%></td>
 						<td><%=obj.getSoDienThoaiDiDong()!=null?obj.getSoDienThoaiDiDong():""%></td>
-<%-- 						<td><%=obj.getGhiChu()!=null?obj.getGhiChu():""%></td> --%>
-<%-- 						<td><%=obj.getSoTaiKhoan()!=null?obj.getSoTaiKhoan():""%></td> --%>
-<%-- 						<td><%=obj.getTenHocKy()%></td> --%>
-<%-- 						<td><%=Util_Date.dateToString2(obj.getNgayBatDau())%></td> --%>
-<%-- 						<td><%=Util_Date.dateToString2(obj.getNgayKetThuc())%></td> --%>
 						<td style="text-align: center;"><%@ include
 								file="../../datxePartial/menupullcuadoituong.jsp"%></td>
 					</tr>

@@ -23,16 +23,6 @@ public class Controller_ChucNang extends ChucNang implements ZEController{
 	String tenCotTimDoiTuong = "maChucNang";
 	String maObj;
 	String maChucNangCha;
-	
-	
-	
-	
-	public ObjectDAO getDao() {
-		return dao;
-	}
-	public void setDao(ObjectDAO dao) {
-		this.dao = dao;
-	}
 	public String getTimKiemTheo() {
 		return timKiemTheo;
 	}
@@ -44,6 +34,12 @@ public class Controller_ChucNang extends ChucNang implements ZEController{
 	}
 	public void setTuKhoa(String tuKhoa) {
 		this.tuKhoa = tuKhoa;
+	}
+	public String getTenCotTimDoiTuong() {
+		return tenCotTimDoiTuong;
+	}
+	public void setTenCotTimDoiTuong(String tenCotTimDoiTuong) {
+		this.tenCotTimDoiTuong = tenCotTimDoiTuong;
 	}
 	public String getMaObj() {
 		return maObj;
@@ -65,8 +61,6 @@ public class Controller_ChucNang extends ChucNang implements ZEController{
 		else
 			return null;
 	}
-	
-	
 	@Override
 	public String addNew() {
 		HttpServletRequest request = ServletActionContext.getRequest();
@@ -183,6 +177,9 @@ public class Controller_ChucNang extends ChucNang implements ZEController{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	
+	
 	
 	
 }

@@ -11,7 +11,7 @@ String[] tk_value = {"maHanhKhach", "hoTen", "ngaySinh", "gioiTinh", "noiSinh", 
 String[] tk_show = {"Mã Hành Khách", "Họ Tên", "Ngày Sinh", "Giới Tính", "Nới Sinh", "Quê Quán", "Dân Tộc", "Tôn Giáo", "Địa Chỉ", "Số CMND","Email","Số Điện Thoại Di động"};
 	
 %>
-%>
+
 <%@ include file="../datxePartial/code-header.jsp"%>
 <%
 String mode = session.getAttribute("mode") + "";

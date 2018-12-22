@@ -29,8 +29,14 @@ String duongDanTrang = "eCore/pages/hanhkhachs.jsp";
 String duongDanTrangView = "eCore/pages/hanhkhach.jsp";
 String tenCotTimDoiTuong = "maHanhKhach";
 String maObj;
-//String maHanhTrinhHanhKhach;
+String s_ngaySinh;
 String s_thoiGianCapNhat;
+
+File myFile;
+String myFileContentType;
+String myFileFileName;
+String myFileName;
+String myFolder;
 public String getTimKiemTheo() {
 	return timKiemTheo;
 }
@@ -55,30 +61,50 @@ public String getMaObj() {
 public void setMaObj(String maObj) {
 	this.maObj = maObj;
 }
-//public String getMaHanhTrinhHanhKhach() {
-//	return maHanhTrinhHanhKhach;
-//}
-//public void setMaHanhTrinhHanhKhach(String maHanhTrinhHanhKhach) {
-//	this.maHanhTrinhHanhKhach = maHanhTrinhHanhKhach;
-//}
-//public HanhTrinhHanhKhach geHanhTrinhHanhKhach() {
-//	ObjectDAO<HanhTrinhHanhKhach> dao_HanhTrinhHanhKhach = new DAO_HanhTrinhHanhKhach();
-//	ArrayList<HanhTrinhHanhKhach> list_HanhTrinhHanhKhach = dao_HanhTrinhHanhKhach.listByColumns("maHanhTrinhHanhKhach", getMaHanhTrinhHanhKhach());
-//	if (list_HanhTrinhHanhKhach.size() > 0) {
-//		return list_HanhTrinhHanhKhach.get(0);
-//	} else {
-//		return null;
-//	}
-//}
+public String getS_ngaySinh() {
+	return s_ngaySinh;
+}
+public void setS_ngaySinh(String s_ngaySinh) {
+	this.s_ngaySinh = s_ngaySinh;
+}
+public Date getNgaySinh() {
+	return Util_Date.stringToDate(getS_ngaySinh());
+}
 public String getS_thoiGianCapNhat() {
 	return s_thoiGianCapNhat;
 }
 public void setS_thoiGianCapNhat(String s_thoiGianCapNhat) {
 	this.s_thoiGianCapNhat = s_thoiGianCapNhat;
 }
-
-public Date getThoiGianCapNhat() {
-	return Util_Date.stringToDate(getS_thoiGianCapNhat());
+public File getMyFile() {
+	return myFile;
+}
+public void setMyFile(File myFile) {
+	this.myFile = myFile;
+}
+public String getMyFileContentType() {
+	return myFileContentType;
+}
+public void setMyFileContentType(String myFileContentType) {
+	this.myFileContentType = myFileContentType;
+}
+public String getMyFileFileName() {
+	return myFileFileName;
+}
+public void setMyFileFileName(String myFileFileName) {
+	this.myFileFileName = myFileFileName;
+}
+public String getMyFileName() {
+	return myFileName;
+}
+public void setMyFileName(String myFileName) {
+	this.myFileName = myFileName;
+}
+public String getMyFolder() {
+	return myFolder;
+}
+public void setMyFolder(String myFolder) {
+	this.myFolder = myFolder;
 }
 @Override
 public String addNew() {
@@ -129,40 +155,39 @@ public String viewDetailAndEdit() {
 public String saveOrUpdate() {
 	HttpServletRequest request = ServletActionContext.getRequest();
 	HttpSession session = request.getSession();
-
-	HanhKhach obj = new HanhKhach();
-	obj.maHanhKhach = getMaHanhKhach();
-	obj.hoTen = getHoTen();
-//	obj.hinhAnh = s.substring(s.lastIndexOf("\\") + 1, s.length());
-	obj.ngaySinh = getNgaySinh();
-	obj.gioiTinh = getGioiTinh();
-	obj.noiSinh = getNoiSinh();
-	obj.queQuan = getQueQuan();
-	obj.danToc = getDanToc();
-	obj.tonGiao = getTonGiao();
-	obj.diaChi = getDiaChi();
-	obj.cMND = getcMND();
-	obj.email = getEmail();
-	obj.soDienThoaiDiDong = getSoDienThoaiDiDong();
-//	obj.ghiChu = getGhiChu();
-//	obj.hanhTrinhHanhKhach = getHanhTrinhHanhKhach();
-	obj.thoiGianCapNhat = new Date();
-	if (dao.saveOrUpdate(obj)) {
-		session.setAttribute("msg", "Cập nhật dữ liệu thành công");
-		session.setAttribute("obj", obj);
-		session.setAttribute("mode", "viewDetailAndEdit");
-		session.setAttribute("p", duongDanTrangView);
-		return "SUCCESS";
-	} else {
-		return "FAIL";
-	}
+	
+		HanhKhach obj = new HanhKhach();
+		obj.maHanhKhach = getMaHanhKhach();
+		obj.hoTen = getHoTen();
+		obj.ngaySinh = getNgaySinh();
+		obj.gioiTinh = getGioiTinh();
+		obj.noiSinh = getNoiSinh();
+		obj.queQuan = getQueQuan();
+		obj.danToc = getDanToc();
+		obj.tonGiao = getTonGiao();
+		obj.diaChi = getDiaChi();
+		obj.cMND = getcMND();
+		obj.email = getEmail();
+		obj.soDienThoaiDiDong = getSoDienThoaiDiDong();
+		obj.ghiChu = getGhiChu();
+		obj.thoiGianCapNhat = getThoiGianCapNhat();
+		if (dao.saveOrUpdate(obj)) {
+			session.setAttribute("msg", "Cập nhật dữ liệu thành công");
+			session.setAttribute("obj", obj);
+			session.setAttribute("mode", "viewDetailAndEdit");
+			session.setAttribute("p", duongDanTrangView);
+			return "SUCCESS";
+		} else {
+			return "FAIL";
+		}
+	
 }
 @Override
 public String delete() {
 	HttpServletRequest request = ServletActionContext.getRequest();
 	HttpSession session = request.getSession();
 	String maobj = request.getParameter("maobj");
-	HanhKhach obj = new HanhKhach();
+	HanhKhach obj = (HanhKhach) dao.listByColumns("maHanhKhach", maobj).get(0);
 	obj.setMaHanhKhach(maobj);
 	if (dao.delete(obj)) {
 		session.setAttribute("msg", "Xóa dữ liệu thành công");
@@ -204,4 +229,7 @@ public String exportData() throws IOException {
 	// TODO Auto-generated method stub
 	return null;
 }
+
+
+
 }

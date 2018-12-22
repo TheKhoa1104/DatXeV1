@@ -205,7 +205,7 @@ public class Controller_TaiXe extends TaiXe implements ZEController{
 		HttpSession session = request.getSession();
 		String maobj = request.getParameter("maobj");
 		TaiXe obj = (TaiXe) dao.listByColumns("maTaiXe", maobj).get(0);
-		// obj.setMaNhanVien(maobj);
+		obj.setMaTaiXe(maobj);
 		if (obj.getHinhAnh() != null) {
 			myFileName = request.getRealPath("eCore/images/nhanviens") + "/" + obj.getHinhAnh();
 			System.out.println(myFileName);
