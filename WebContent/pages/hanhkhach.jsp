@@ -2,7 +2,6 @@
 <%@page import="eCore.model.HanhKhach"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%
 String tenlop = "HanhKhach";
 String tenTrang = "Quản Lý Hành Khách";
@@ -11,10 +10,10 @@ String[] tk_value = {"maHanhKhach", "hoTen", "ngaySinh", "gioiTinh", "noiSinh", 
 String[] tk_show = {"Mã Hành Khách", "Họ Tên", "Ngày Sinh", "Giới Tính", "Nới Sinh", "Quê Quán", "Dân Tộc", "Tôn Giáo", "Địa Chỉ", "Số CMND","Email","Số Điện Thoại Di động"};
 	
 %>
-
 <%@ include file="../datxePartial/code-header.jsp"%>
+
 <%
-String mode = session.getAttribute("mode") + "";
+	String mode = session.getAttribute("mode") + "";
 	String tenTrangChiTiet = "";
 	tenTrangChiTiet = mode.equals("addNew") ? "Thêm mới" : tenTrangChiTiet;
 	tenTrangChiTiet = mode.equals("viewDetail") ? "Xem thông tin chi tiết" : tenTrangChiTiet;
@@ -68,7 +67,6 @@ String mode = session.getAttribute("mode") + "";
 								<div class="form-group">
 									<label>Mã Hành Khách</label> <input class="form-control"
 										id="maHanhKhach" name="maHanhKhach" onblur="thayDoiMyFileFileName()"
-										
 											value="<%=(obj != null && obj.getMaHanhKhach() != null ? obj.getMaHanhKhach() : "")%>"
 										<%=(modeView || modeEdit ? " readonly " : "")%>>
 								</div>
@@ -78,16 +76,7 @@ String mode = session.getAttribute("mode") + "";
 										value="<%=(obj != null && obj.getHoTen() != null ? obj.getHoTen() : "")%>"
 										<%=(modeView ? " readonly " : "")%>>
 								</div>
-								<div class="form-group">
-									<label>Hình ảnh</label> <input class="form-control"
-										name="myFile"
-										value="<%=(obj != null && obj.getHinhAnh() != null ? obj.getHinhAnh() : "")%>"
-										type="<%=(modeView ? "hidden" : "file")%>"><img
-										src="<%=obj != null && obj.getHinhAnh() != null && modeView ? "kTXCore/images/taixes/" + obj.getHinhAnh()
-					: ""%>"
-										height="<%=modeView ? 135 : 1%>"
-										width="<%=modeView ? 135 : 1%>">
-								</div>
+								
 								<div class="form-group">
 									<label>Ngày Sinh</label> <input class="form-control"
 										name="s_ngaySinh" type="date"
@@ -160,39 +149,34 @@ String mode = session.getAttribute("mode") + "";
 <%-- 									value="<%=(obj != null && obj.getGhiChu() != null ? obj.getGhiChu() : "")%>" --%>
 <%-- 									<%=(modeView ? " readonly " : "")%>> --%>
 <!-- 							</div> -->
-<!-- 							<div class="form-group"> -->
-<!-- 								<label>Số Tài Khoản</label> <input class="form-control" -->
-<!-- 									name="soTaiKhoan" -->
-<%-- 									value="<%=(obj != null && obj.getSoTaiKhoan() != null ? obj.getSoTaiKhoan() : "")%>" --%>
-<%-- 									<%=(modeView ? " readonly " : "")%>> --%>
-<!-- 							</div> -->
+							
 							</div>
 						</div>
-						<div class="row">
-							<div class="col-lg-12">
-<!-- 								<div class="form-group"> -->
-<!-- 									<label>Mô tả</label> -->
-<!-- 									<textarea class="form-control" cols="80" id="editor1" rows="5" -->
-<%-- 										name="moTa" <%=(modeView ? " disabled " : "")%>><%=(obj != null && obj.getMoTa() != null ? obj.getMoTa() : "")%></textarea> --%>
-<!-- 								</div> -->
+<!-- 						<div class="row"> -->
+<!-- 							<div class="col-lg-12"> -->
+<!-- <!-- 								<div class="form-group"> --> -->
+<!-- <!-- 									<label>Mô tả</label> --> -->
+<!-- <!-- 									<textarea class="form-control" cols="80" id="editor1" rows="5" --> -->
+<%-- <%-- 										name="moTa" <%=(modeView ? " disabled " : "")%>><%=(obj != null && obj.getMoTa() != null ? obj.getMoTa() : "")%></textarea> --%> --%>
+<!-- <!-- 								</div> --> -->
 <!-- 								<div class="form-group"> -->
 <!-- 									<label>Ghi chú</label> -->
 <!-- 									<textarea class="form-control" cols="80" id="editor2" rows="5" -->
 <%-- 										name="ghiChu" <%=(modeView ? " disabled " : "")%>><%=(obj != null && obj.getGhiChu() != null ? obj.getGhiChu() : "")%></textarea> --%>
 <!-- 								</div> -->
-							</div>
-						</div>
-						<input type="hidden" name="s_hinhAnh"
-							value="<%=obj != null && obj.getHinhAnh() != null ? obj.getHinhAnh() : ""%>">
-						<input type="hidden" id="myFileName" name="myFileName"></input> <input
-							type="hidden" name="myFolder"
-							value="<%=request.getRealPath("images/hanhkhachs")%>" />
-						<div class="panel-footer" style="text-align: left;">
-							<div class="col-md-5"></div>
-							<div class="col-md-7">
-								<%@ include file="../datxePartial/processform.jsp"%>
-							</div>
-						</div>
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 						<input type="hidden" name="s_hinhAnh" -->
+<%-- 							value="<%=obj != null && obj.getHinhAnh() != null ? obj.getHinhAnh() : ""%>"> --%>
+<!-- 						<input type="hidden" id="myFileName" name="myFileName"></input> <input -->
+<!-- 							type="hidden" name="myFolder" -->
+<%-- 							value="<%=request.getRealPath("images/taixes")%>" /> --%>
+<!-- 						<div class="panel-footer" style="text-align: left;"> -->
+<!-- 							<div class="col-md-5"></div> -->
+<!-- 							<div class="col-md-7"> -->
+<%-- 								<%@ include file="../datxePartial/processform.jsp"%> --%>
+<!-- 							</div> -->
+<!-- 						</div> -->
 						<!-- /.col-lg-6 (nested) -->
 						<!-- /.col-lg-6 (nested) -->
 					</div>

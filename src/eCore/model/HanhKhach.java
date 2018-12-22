@@ -25,12 +25,7 @@ public class HanhKhach implements Comparable<HanhKhach> {
 	public String cMND;
 	public String email;
 	public String soDienThoaiDiDong;
-	@Type(type = "text")
-	public String ghiChu;
-	public String soTaiKhoan;
 	public Date thoiGianCapNhat;
-//	@ManyToOne(fetch = FetchType.EAGER)
-//	public HanhTrinhHanhKhach hanhTrinhHanhKhach;
 	/**
 	 * 
 	 */
@@ -50,13 +45,11 @@ public class HanhKhach implements Comparable<HanhKhach> {
 	 * @param cMND
 	 * @param email
 	 * @param soDienThoaiDiDong
-	 * @param ghiChu
-	 * @param soTaiKhoan
 	 * @param thoiGianCapNhat
 	 */
 	public HanhKhach(String maHanhKhach, String hoTen, String hinhAnh, Date ngaySinh, String gioiTinh, String noiSinh,
 			String queQuan, String danToc, String tonGiao, String diaChi, String cMND, String email,
-			String soDienThoaiDiDong, String ghiChu, String soTaiKhoan, Date thoiGianCapNhat) {
+			String soDienThoaiDiDong, Date thoiGianCapNhat) {
 		this.maHanhKhach = maHanhKhach;
 		this.hoTen = hoTen;
 		this.hinhAnh = hinhAnh;
@@ -70,8 +63,6 @@ public class HanhKhach implements Comparable<HanhKhach> {
 		this.cMND = cMND;
 		this.email = email;
 		this.soDienThoaiDiDong = soDienThoaiDiDong;
-		this.ghiChu = ghiChu;
-		this.soTaiKhoan = soTaiKhoan;
 		this.thoiGianCapNhat = thoiGianCapNhat;
 	}
 	public String getMaHanhKhach() {
@@ -152,18 +143,6 @@ public class HanhKhach implements Comparable<HanhKhach> {
 	public void setSoDienThoaiDiDong(String soDienThoaiDiDong) {
 		this.soDienThoaiDiDong = soDienThoaiDiDong;
 	}
-	public String getGhiChu() {
-		return ghiChu;
-	}
-	public void setGhiChu(String ghiChu) {
-		this.ghiChu = ghiChu;
-	}
-	public String getSoTaiKhoan() {
-		return soTaiKhoan;
-	}
-	public void setSoTaiKhoan(String soTaiKhoan) {
-		this.soTaiKhoan = soTaiKhoan;
-	}
 	public Date getThoiGianCapNhat() {
 		return thoiGianCapNhat;
 	}
@@ -178,7 +157,6 @@ public class HanhKhach implements Comparable<HanhKhach> {
 		result = prime * result + ((danToc == null) ? 0 : danToc.hashCode());
 		result = prime * result + ((diaChi == null) ? 0 : diaChi.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
-		result = prime * result + ((ghiChu == null) ? 0 : ghiChu.hashCode());
 		result = prime * result + ((gioiTinh == null) ? 0 : gioiTinh.hashCode());
 		result = prime * result + ((hinhAnh == null) ? 0 : hinhAnh.hashCode());
 		result = prime * result + ((hoTen == null) ? 0 : hoTen.hashCode());
@@ -187,7 +165,6 @@ public class HanhKhach implements Comparable<HanhKhach> {
 		result = prime * result + ((noiSinh == null) ? 0 : noiSinh.hashCode());
 		result = prime * result + ((queQuan == null) ? 0 : queQuan.hashCode());
 		result = prime * result + ((soDienThoaiDiDong == null) ? 0 : soDienThoaiDiDong.hashCode());
-		result = prime * result + ((soTaiKhoan == null) ? 0 : soTaiKhoan.hashCode());
 		result = prime * result + ((thoiGianCapNhat == null) ? 0 : thoiGianCapNhat.hashCode());
 		result = prime * result + ((tonGiao == null) ? 0 : tonGiao.hashCode());
 		return result;
@@ -220,11 +197,6 @@ public class HanhKhach implements Comparable<HanhKhach> {
 			if (other.email != null)
 				return false;
 		} else if (!email.equals(other.email))
-			return false;
-		if (ghiChu == null) {
-			if (other.ghiChu != null)
-				return false;
-		} else if (!ghiChu.equals(other.ghiChu))
 			return false;
 		if (gioiTinh == null) {
 			if (other.gioiTinh != null)
@@ -266,11 +238,6 @@ public class HanhKhach implements Comparable<HanhKhach> {
 				return false;
 		} else if (!soDienThoaiDiDong.equals(other.soDienThoaiDiDong))
 			return false;
-		if (soTaiKhoan == null) {
-			if (other.soTaiKhoan != null)
-				return false;
-		} else if (!soTaiKhoan.equals(other.soTaiKhoan))
-			return false;
 		if (thoiGianCapNhat == null) {
 			if (other.thoiGianCapNhat != null)
 				return false;
@@ -288,17 +255,13 @@ public class HanhKhach implements Comparable<HanhKhach> {
 		return "HanhKhach [maHanhKhach=" + maHanhKhach + ", hoTen=" + hoTen + ", hinhAnh=" + hinhAnh + ", ngaySinh="
 				+ ngaySinh + ", gioiTinh=" + gioiTinh + ", noiSinh=" + noiSinh + ", queQuan=" + queQuan + ", danToc="
 				+ danToc + ", tonGiao=" + tonGiao + ", diaChi=" + diaChi + ", cMND=" + cMND + ", email=" + email
-				+ ", soDienThoaiDiDong=" + soDienThoaiDiDong + ", ghiChu=" + ghiChu + ", soTaiKhoan=" + soTaiKhoan
-				+ ", thoiGianCapNhat=" + thoiGianCapNhat + "]";
+				+ ", soDienThoaiDiDong=" + soDienThoaiDiDong + ", thoiGianCapNhat=" + thoiGianCapNhat + "]";
 	}
 	@Override
 	public int compareTo(HanhKhach o) {
 		// TODO Auto-generated method stub
 		return this.maHanhKhach.compareTo(o.maHanhKhach);
 	}
-	
-	
-	
 	
 	
 }

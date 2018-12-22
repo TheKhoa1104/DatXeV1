@@ -13,12 +13,9 @@ import org.apache.struts2.ServletActionContext;
 
 import eCore.dao.ObjectDAO;
 import eCore.model.HanhKhach;
-import eCore.model.HanhTrinhHanhKhach;
 import eCore.model.TaiXe;
 import eCore.modelDao.DAO_HanhKhach;
-import eCore.modelDao.DAO_HanhTrinhHanhKhach;
 import eCore.util.Util_Date;
-
 
 public class Controller_HanhKhach extends HanhKhach implements ZEController{
 ObjectDAO dao = new DAO_HanhKhach();
@@ -30,7 +27,6 @@ String duongDanTrangView = "eCore/pages/hanhkhach.jsp";
 String tenCotTimDoiTuong = "maHanhKhach";
 String maObj;
 String s_ngaySinh;
-String s_thoiGianCapNhat;
 
 File myFile;
 String myFileContentType;
@@ -69,12 +65,6 @@ public void setS_ngaySinh(String s_ngaySinh) {
 }
 public Date getNgaySinh() {
 	return Util_Date.stringToDate(getS_ngaySinh());
-}
-public String getS_thoiGianCapNhat() {
-	return s_thoiGianCapNhat;
-}
-public void setS_thoiGianCapNhat(String s_thoiGianCapNhat) {
-	this.s_thoiGianCapNhat = s_thoiGianCapNhat;
 }
 public File getMyFile() {
 	return myFile;
@@ -169,8 +159,7 @@ public String saveOrUpdate() {
 		obj.cMND = getcMND();
 		obj.email = getEmail();
 		obj.soDienThoaiDiDong = getSoDienThoaiDiDong();
-		obj.ghiChu = getGhiChu();
-		obj.thoiGianCapNhat = getThoiGianCapNhat();
+		obj.thoiGianCapNhat = new Date();
 		if (dao.saveOrUpdate(obj)) {
 			session.setAttribute("msg", "Cập nhật dữ liệu thành công");
 			session.setAttribute("obj", obj);
@@ -181,6 +170,7 @@ public String saveOrUpdate() {
 			return "FAIL";
 		}
 	
+
 }
 @Override
 public String delete() {
@@ -229,7 +219,6 @@ public String exportData() throws IOException {
 	// TODO Auto-generated method stub
 	return null;
 }
-
 
 
 }

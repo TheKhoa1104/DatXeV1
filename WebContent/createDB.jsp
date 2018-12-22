@@ -138,7 +138,7 @@
 		
 		ChucNang CN_QuanLyChucNang = new ChucNang();
 		CN_QuanLyChucNang.setMaChucNang("eCore_CN_QuanLyChucNang");
-		CN_QuanLyChucNang.setDuongDan("eCore/pages/chucnangs.jsp");
+		CN_QuanLyChucNang.setDuongDan("pages/chucnangs.jsp");
 		CN_QuanLyChucNang.setHinhAnh("fa fa-share-alt");
 		CN_QuanLyChucNang.setTenHienThi("Quản lý chức năng");
 		CN_QuanLyChucNang.setChucNangCha(CN_QuanLyChucNangVaTaiKhoan);

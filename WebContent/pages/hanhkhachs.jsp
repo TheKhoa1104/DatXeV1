@@ -5,7 +5,7 @@
 <%
 String tenlop = "HanhKhach";
 String tenTrang = "Quản Lý Hành Khách";
-String trangDanhSach = "index.jsp?p=eCore/pages/hanhkhachs.jsp";
+String trangDanhSach = "index.jsp?p=pages/hanhkhachs.jsp";
 String[] tk_value = {"maHanhKhach", "hoTen", "ngaySinh", "gioiTinh", "noiSinh", "queQuan", "danToc", "tonGiao", "diaChi", "cMND", "email","soDienThoaiDiDong" };
 String[] tk_show = {"Mã Hành Khách", "Họ Tên", "Ngày Sinh", "Giới Tính", "Nới Sinh", "Quê Quán", "Dân Tộc", "Tôn Giáo", "Địa Chỉ", "Số CMND","Email","Số Điện Thoại Di động"};
 	
@@ -50,7 +50,7 @@ String[] tk_show = {"Mã Hành Khách", "Họ Tên", "Ngày Sinh", "Giới 
 				id="dataTables-example">
 				<thead>
 					<tr>
-						<th>Mã hành khách</th>
+						<th>Mã Hành Khách</th>
 						<th>Họ tên</th>
 						<th>Ngày sinh</th>
 						<th>Giới tính</th>
@@ -62,9 +62,6 @@ String[] tk_show = {"Mã Hành Khách", "Họ Tên", "Ngày Sinh", "Giới 
 						<th>CMND</th>
 						<th>Email</th>
 						<th>Số diện thoại di động</th>
-						
-						
-
 					</tr>
 				</thead>
 				<tbody>
@@ -75,9 +72,10 @@ String[] tk_show = {"Mã Hành Khách", "Họ Tên", "Ngày Sinh", "Giới 
 							String tenDoiTuong = obj.getHoTen();
 					%>
 					<tr class="odd gradeX">
-
+<%-- 						<td><%=obj.getNamHoc() == null ? "" : obj.getNamHoc().getTenNamHoc()%></td> --%>
 						<td><%=obj.getMaHanhKhach()%></td>
 						<td><%=obj.getHoTen()!=null?obj.getHoTen():""%></td>
+						<td><%=obj.getHinhAnh()!=null?obj.getHinhAnh():""%></td>
 						<td><%=obj.getNgaySinh()!=null?obj.getNgaySinh():""%></td>
 						<td><%=obj.getGioiTinh()!=null?obj.getGioiTinh():""%></td>
 						<td><%=obj.getNoiSinh()!=null?obj.getNoiSinh():""%></td>
